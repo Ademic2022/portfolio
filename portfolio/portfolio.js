@@ -10,8 +10,6 @@ const slider = document.querySelectorAll(".slider")
 const a = document.querySelectorAll(".a")
 
 
-
-
 registerLink.addEventListener("click", ()=> {
     container.classList.add("active")
 })
@@ -26,8 +24,6 @@ closeIcon.addEventListener("click", ()=> {
     container.classList.remove("active-popup")
     containerBox.style.display = 'none'
 })
-
-
 
 
 
