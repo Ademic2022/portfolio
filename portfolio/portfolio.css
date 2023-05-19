@@ -1,0 +1,501 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* min-height: 100vh; */
+    /* background: url("./img/img-background.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+p, h1, h3, h4, span, a, button, .logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    padding: 20px 100px;
+}
+header.height{
+    background-color: #fff;
+    transition: 1s ease-in;
+    box-shadow: 3px #162938;
+    border-bottom: 1px solid #162938;
+}
+
+header.height .logo{
+    color: #06b9f7;
+}
+header.height .btnLogin-popup{
+    color: #162938;
+    background: transparent;
+    border: 2px solid #162938;
+    outline: none;
+}
+header.height .btnLogin-popup:hover{
+    background-color: #162938;
+    color: #fff;
+}
+
+header.height:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+}
+.logo{
+    font-size: 2em;
+    user-select: none;
+    color: #fff;
+}
+.navigation a, header.height a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    text-transform: uppercase;
+}
+header.height a{
+    color: #162938;
+}
+.navigation a::after, header.height a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform .5s;
+}
+header.height a::after{
+    background: #06b9f7;
+}
+.navigation a:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+
+}
+.navigation .btnLogin-popup, header.height .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 40px;
+    transition: .5s;
+    text-transform: uppercase;
+}
+header.height .btnLogin-popup{
+    color: #162938;
+    background: transparent;
+    border: 2px solid #162938;
+}
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+}
+
+/* LOGIN AND REGISTRATION CASCADING */
+.container-box{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 100px;
+    top: 0;
+    left:0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+   -webkit-animation-name: sketchOut;
+   -webkit-animation-duration: 1.5s;
+   animation-name: sketchOut;
+   animation-duration: 1.5s;
+}
+.section-content{
+    display: flex; 
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("./img/img-background.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    transition: transform .5s ease, height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+    margin: 0 auto;
+}
+.container.active{
+    height: 520px;
+}
+.container.active-popup{
+    transform: scale(1);
+}
+.container .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.container.active .form-box.login{
+    transition: none;
+    transform:translate(-400px) ;
+}
+.container .form-box.register{
+    position: absolute;
+    transform: translate(400px);
+    transition: none;
+}
+.container.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.container .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 99;
+    transition: transform .18s ease;
+}
+.container .icon-close:hover{
+    color: #ae0e0e;;
+}
+.container .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.form-box h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.input-section{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+}
+.input-section input:focus~label, .input-section input:valid~label{
+    top: -5px;
+}
+.input-section label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-section input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-section .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 57px;
+}
+.form-footer{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.form-footer label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+.form-footer a{
+    color: #162938;
+    text-decoration: none;
+}
+.form-footer a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+}
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a{
+    color: #162938;
+    text-decoration: none;
+}
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+
+/* **************** ABOUT ME **************** */
+.about-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease;
+    overflow: hidden;
+    /* gap: 1em; */
+}
+.about-container .about-me{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    margin: auto 0;
+}
+.about-me .text-content{
+    padding: 0 20px;
+    text-align: justify;
+    height: 100%;
+    width: 100%;
+    margin-top: 40%;
+    color: #162938;
+    line-height: 1;
+    text-align: right;
+    font-size: 15px;
+    letter-spacing: 0;
+}
+.text-content h1, .skills h1{
+    display: inline-block;
+    padding: 20px 0;
+    text-transform: capitalize;
+    margin: auto;
+    font-weight: 700;
+    font-size: 36px;
+}
+.text-content p{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.5;
+    text-align: right;
+    font-size: 20px;
+    letter-spacing: 0;
+}
+.text-content .download-btn{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #162938;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    color:#162938;
+    margin-left: 40px;
+    transition: .5s;
+    text-decoration: none;
+}
+.text-content .download-btn:hover{
+    background: #162938;
+    color: #fff;
+}
+.about-container .skills{
+    height: 100%;
+    width: 50%;
+    padding: 0 20px;
+    text-align: justify;
+    margin-top: 25%;
+    color: #162938;
+    line-height: 1;
+    text-align: left;
+    font-size: 15px;
+    letter-spacing: 0; 
+    background-color: #fff;
+}
+.image-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin-top: 15%;
+    background-color: #fff;
+    overflow: hidden;
+ }
+ .image-class img{
+    width:100%;
+    margin-bottom: 10%;
+    height:80%;
+    background-size: cover; 
+    background-position: center; 
+ }
+.skill-bar h3 span{
+    color: #162938;
+    float: right;
+}
+.skill-bar .progress{
+    padding: 3px 0;
+}
+.progress{
+    margin-bottom: 20px;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 12px;
+    border: 2px solid #162938;
+    color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress .progress-bar span{
+    display: flex;
+    color: #fff;
+    background-color: #162938;
+    justify-content: right;
+    font-size: 10px;
+    font-weight: 500;
+    height: 10px;
+}
+.progress .progress-bar span.html{
+    width: 90%;
+    transition: 2s right;
+}
+.progress .progress-bar span.css{
+    width: 85%;
+}
+.progress .progress-bar span.javascript{
+    width: 85%;
+}
+/* **************** SERVICES **************** */
+#services{
+    width: 100%;
+    height: 150vh;
+    background-color: #f3f4f3;    
+}
+.services-heading h1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 190px;
+    flex-grow: 1;
+    padding-top: 100px;
+}
+.services-content, .number-area{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 3em;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.services-content .slider, .eol{
+    width: 350px;
+    height: 20em;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-direction:column;
+}
+.slider .slider-icon{
+    font-size: 50px;
+    padding-bottom: 15px;
+    transition: .8s;
+    cursor: default;
+    color: rgb(20, 178, 35);
+}
+.slider .slides{
+    transform: rotate(360deg);
+    color: #162938;
+}
+.slider h1{
+    padding-bottom: 15px;
+    text-transform: capitalize;
+}
+.slider p{
+    padding-bottom: 20px;
+    text-align: justify;
+    line-height: 23px;
+    font-size: larger;
+}
+/* **************** CONTACT ME **************** */
+.contact-container{
+    /* position: relative; */
+    width: 100%;
+    height: 100vh;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease;
+    overflow: hidden;
+}
+.contact-container h2{
+    color: #fff;
+}
