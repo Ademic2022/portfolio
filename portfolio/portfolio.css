@@ -6,13 +6,6 @@
 }
 body{
     font-family: "Poppins", sans-serif;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* min-height: 100vh; */
-    /* background: url("./img/img-background.jpg") no-repeat;
-    background-size: cover;
-    background-position: center; */
 }
 p, h1, h3, h4, span, a, button, .logo{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
@@ -433,8 +426,8 @@ header.height .btnLogin-popup{
 /* **************** SERVICES **************** */
 #services{
     width: 100%;
-    height: 150vh;
-    background-color: #f3f4f3;    
+    height: 128vh;
+    background-color: #f3f4f3;   
 }
 .services-heading h1{
     display:flex;
@@ -445,16 +438,17 @@ header.height .btnLogin-popup{
     flex-grow: 1;
     padding-top: 100px;
 }
-.services-content, .number-area{
+.services-content{
     display: flex;
     justify-content: center;
     align-items:center;
     gap: 3em;
     width: 100%;
     margin-top: 25px;
+    margin-bottom: 100px;
 }
 
-.services-content .slider, .eol{
+.services-content .slider{
     width: 350px;
     height: 20em;
     margin-top: 25px;
@@ -480,13 +474,47 @@ header.height .btnLogin-popup{
 }
 .slider p{
     padding-bottom: 20px;
-    text-align: justify;
+    text-align: center;
     line-height: 23px;
     font-size: larger;
 }
+.number-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #06b9f7;
+    padding: 0 10px;
+    height: 270px;
+    gap: 1em;
+}
+.number-area .counters{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    height: inherit;
+}
+.counters .counters_content{
+    text-align: center;
+}
+.counters_content h1{
+    font-weight: 800;
+    font-size: 45px;
+    color: #fff;   
+    padding-bottom: 15px; 
+}
+.counters_content h2{
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+.counters_content p{
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+}
 /* **************** CONTACT ME **************** */
 .contact-container{
-    /* position: relative; */
     width: 100%;
     height: 100vh;
     background-color: gold;
