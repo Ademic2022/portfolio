@@ -30,7 +30,7 @@ closeIcon.addEventListener("click", ()=> {
 window.onscroll = function () { 
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
         header.classList.add("height")
-        home_btn.classList.add('active')
+        // home_btn.classList.add('active')
     } 
     else {
         header.classList.remove("height")
@@ -49,18 +49,35 @@ slider.forEach((e) => {
         e.children[1].style.color = '#162938'
     })
 })
+// Active navigation link tracking on scroll
 window.addEventListener('scroll', function() {
     var navButtons = document.querySelectorAll('.nav-btn');
     var sections = document.querySelectorAll('section');
   
     sections.forEach(function(section, index) {
       var rect = section.getBoundingClientRect();
-      console.log(rect);
-      if (rect.top <= 0 && rect.top <= window.innerHeight || window.scrollY === 0) {
+      if ((rect.top <= 0 && rect.top <= window.innerHeight) || window.scrollY === 0) {
         navButtons.forEach(function(btn) {
           btn.classList.remove('active');
         });
-        navButtons[index].classList.add('active');
+        if (navButtons[index]) {
+          navButtons[index].classList.add('active');
+        }
       }
     });
+  });
+  
+// Smooth scrolling for navigation links
+var navLinks = document.querySelectorAll('a.nav-btn');
+
+navLinks.forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target.getAttribute('id') === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
