@@ -578,8 +578,11 @@ CONTACT ME
     flex-direction: column;
     gap: 1em;
 }
-.input-box{
+.contact-layout-items h3{
+    text-transform: uppercase;
+}
+.input-container{
     width: 80%;
-    background-color: aqua;
     height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
