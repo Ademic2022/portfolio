@@ -56,7 +56,7 @@ window.addEventListener('scroll', function() {
   
     sections.forEach(function(section, index) {
       var rect = section.getBoundingClientRect();
-      if ((rect.top <= 0 && rect.top <= window.innerHeight) || window.scrollY === 0) {
+      if ((rect.top <= 1 && rect.top <= window.innerHeight) || window.scrollY === 0) {
         navButtons.forEach(function(btn) {
           btn.classList.remove('active');
         });
