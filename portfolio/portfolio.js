@@ -30,7 +30,6 @@ closeIcon.addEventListener("click", ()=> {
 window.onscroll = function () { 
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
         header.classList.add("height")
-        // home_btn.classList.add('active')
     } 
     else {
         header.classList.remove("height")
