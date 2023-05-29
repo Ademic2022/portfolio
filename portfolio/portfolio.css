@@ -583,7 +583,9 @@ CONTACT ME
 }
 .input-container{
     width: 80%;
-    height: 550px;
+    /* height: 550px; */
+    height: auto;
+    padding-top: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .input-container .row-align, .input-container .text-area{
@@ -597,35 +599,41 @@ CONTACT ME
 }
 .col-align input[type="text"], .col-align input[type="email"]{
     width: 100%;
-    color:#06b9f7;
-    height: 30px;
+    height: 40px;
     margin-bottom: 10px;
     padding: 0 10px;
-}
-.col-align input[type="text"]:focus, .col-align input[type="email"]:focus{
-    outline: none; 
-    border-color: blue; 
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #f3f4f3;
 }
 .input-container .text-area{
     flex-direction: column;
     align-items: flex-start;
 }
 .input-container textarea{
-    margin-top: -40px;
+    margin-top: -50px;
     width: 100%;
     height: 20em;
     padding: 15px;
-    color: #f3f4f3;
+    color: #000;
     outline: #ae0e0e;
 }
-.input-container textarea:focus{
+.col-align p, .text-area p{
+    color: #ae0e0e;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: none;
+}
+/* TEXT INPUTS ON-FOCUS */
+.input-container textarea:focus, .col-align input[type="text"]:focus, .col-align input[type="email"]:focus{
     border-color: rgb(76, 7, 7);
     box-shadow: 0 0 7px rgb(126, 5, 5);
     outline: none;
 }
 .text-area .btn{
     width: 25%;
+    background-color: darkgrey;
 }
 .row-align .col-align{
     width: 100%;
