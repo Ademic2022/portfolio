@@ -80,3 +80,65 @@ navLinks.forEach(function(link) {
     }
   });
 });
+
+// Get the input elements, error message elements, and submit button
+const inputs = document.querySelectorAll('.inputs');
+const errorMessages = document.querySelectorAll('.error-message');
+const submitButton = document.querySelector('.submit-button');
+
+// Regular expression pattern for email validation
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Function to check if there are any error messages displayed
+function checkErrors() {
+  for (let i = 0; i < errorMessages.length; i++) {
+    if (errorMessages[i].style.display === 'block') {
+      return true; // Error message found, return true
+    }
+  }
+  return false; // No error messages found, return false
+}
+
+// Function to check if all inputs are valid
+function checkValidity() {
+  let emailValid = true;
+
+  inputs.forEach((input, index) => {
+    if (input.value.trim() === '') {
+      errorMessages[index].style.display = 'block';
+    } else if (input.type === 'email' && !emailPattern.test(input.value.trim())) {
+      errorMessages[index].style.display = 'block';
+      emailValid = false;
+    } else {
+      errorMessages[index].style.display = 'none';
+    }
+  });
+
+  return emailValid && !checkErrors();
+}
+
+// Add event listener to each input
+inputs.forEach((input, index) => {
+  input.addEventListener('blur', function() {
+    if (!checkValidity()) {
+      submitButton.disabled = true; // Disable the submit button
+      submitButton.style.background = ''; // Remove background color
+    } else {
+      submitButton.disabled = false; // Enable the submit button
+      submitButton.style.background = '#06b9f7'; // Set background color
+    }
+  });
+
+  input.addEventListener('input', function() {
+    if (input.value.trim() !== '') {
+      errorMessages[index].style.display = 'none';
+    }
+    if (!checkValidity()) {
+      submitButton.disabled = true; // Disable the submit button
+      submitButton.style.background = ''; // Remove background color
+    } else {
+      submitButton.disabled = false; // Enable the submit button
+      submitButton.style.background = '#06b9f7'; // Set background color
+    }
+  });
+});
