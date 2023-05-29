@@ -226,18 +226,18 @@
                 <form action="">
                     <div class="row-align">
                         <div class="col-align">
-                            <input type="text" placeholder="Enter your full name*">
-                            <p>input error</p>
+                            <input class="inputs" type="text" placeholder="Enter your full name *">
+                            <p class="error-message">Fullname is required.</p>
                         </div>
                         <div class="col-align">
-                            <input type="email" placeholder="Enter your email*">
-                            <p>input error</p>
+                            <input class="inputs" type="email" placeholder="Enter your email *">
+                            <p class="error-message">Valid email is required.</p>
                         </div>
                     </div>
                     <div class="text-area">
-                        <textarea rows="4" cols="50" name="message" id="message" placeholder="Enter your message*" required></textarea>
-                        <p>input error</p>
-                        <button class="btn">Send Message</button>
+                        <textarea class="inputs" rows="4" cols="50" name="message" id="message" placeholder="Enter your message *" required></textarea>
+                        <p class="error-message">Leave a message for me</p>
+                        <button class="submit-button btn" disabled>Send Message</button>
                     </div>
 
                 </form>
