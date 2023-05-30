@@ -122,10 +122,10 @@ inputs.forEach((input, index) => {
   input.addEventListener('blur', function() {
     if (!checkValidity()) {
       submitButton.disabled = true; // Disable the submit button
-      submitButton.style.background = ''; // Remove background color
+      submitButton.classList.remove('enabled')
     } else {
       submitButton.disabled = false; // Enable the submit button
-      submitButton.style.background = '#06b9f7'; // Set background color
+      submitButton.classList.add('enabled')
     }
   });
 
@@ -135,10 +135,11 @@ inputs.forEach((input, index) => {
     }
     if (!checkValidity()) {
       submitButton.disabled = true; // Disable the submit button
-      submitButton.style.background = ''; // Remove background color
+      submitButton.classList.remove('enabled')
     } else {
       submitButton.disabled = false; // Enable the submit button
-      submitButton.style.background = '#06b9f7'; // Set background color
+      submitButton.classList.add('enabled')
+
     }
   });
 });
