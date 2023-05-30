@@ -601,7 +601,7 @@ CONTACT ME
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
-    padding: 0 10px;
+    padding: 0 1px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -618,10 +618,11 @@ CONTACT ME
     padding: 15px;
     color: #000;
     outline: #ae0e0e;
+    background-color: #f3f4f3;
 }
 .col-align p, .text-area p{
     color: #ae0e0e;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: capitalize;
     display: none;
 }
@@ -634,6 +635,12 @@ CONTACT ME
 .text-area .btn{
     width: 25%;
     background-color: darkgrey;
+    cursor: not-allowed;
+}
+.text-area .enabled{
+    width: 25%;
+    background-color: #06b9f7;
+    cursor: pointer;
 }
 .row-align .col-align{
     width: 100%;
