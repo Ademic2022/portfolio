@@ -36,6 +36,10 @@ header.height .btnLogin-popup{
     background: transparent;
     border: 2px solid #162938;
     outline: none;
+    opacity: 0;
+}
+.btnLogin-popup{
+    animation: slideTop 2s ease forwards;
 }
 header.height .btnLogin-popup:hover{
     background-color: #162938;
@@ -50,6 +54,8 @@ header.height:hover::after{
     font-size: 2em;
     user-select: none;
     color: #fff;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 .navigation a, header.height a{
     position: relative;
@@ -85,7 +91,12 @@ header.height a::after{
 .navigation a:hover::after{
     transform: scale(1);
     transform-origin: left;
-
+}
+.navigation a{
+    display: inline-block;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 .navigation .btnLogin-popup, header.height .btnLogin-popup{
     width: 130px;
@@ -103,13 +114,88 @@ header.height a::after{
     text-transform: uppercase;
 }
 header.height .btnLogin-popup{
+    display: inline-flex;
     color: #162938;
     background: transparent;
     border: 2px solid #162938;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .1s;
 }
 .navigation .btnLogin-popup:hover{
     background: #fff;
     color: #162938;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10% 0;
+    column-count: 2;
+}
+.home-content{
+    max-width: 600px;
+}
+.home-content h3{
+    font-size: 32px;
+    color: #fff;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content p{
+    font-size: 16px;
+    color: #fff;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .1s;
+}
+.home-content h3:nth-last-of-type(1){
+    margin-bottom: 15px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h3 span{
+    color:#06b9f7;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .1s;
+}
+.home-img{
+    max-width: 450px;
+}
+.social-media a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #06b9f7;
+    border-radius: 50%;
+    color: #06b9f7;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.social-media a:hover{
+    background: #06b9f7;
+    color: #162938;
+    box-shadow: 0 0 20px #06b9f7;
 }
 /* 
 ======================================================================================
@@ -659,4 +745,51 @@ FOOTER
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+/* 
+======================================================================================
+Keyframe Animations
+======================================================================================
+*/
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
