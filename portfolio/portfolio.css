@@ -68,6 +68,9 @@ header.height:hover::after{
 }
 header.height a{
     color: #162938;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 .navigation a::after, header.height a::after{
     content: '';
