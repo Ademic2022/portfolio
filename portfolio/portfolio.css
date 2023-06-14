@@ -114,7 +114,6 @@ header.height a::after{
     text-transform: uppercase;
 }
 header.height .btnLogin-popup{
-    display: inline-flex;
     color: #162938;
     background: transparent;
     border: 2px solid #162938;
@@ -172,8 +171,12 @@ header.height .btnLogin-popup{
     animation: slideRight 1s ease forwards;
     animation-delay: .1s;
 }
-.home-img{
+.home-img img{
     max-width: 450px;
+    margin-right: -20px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: .2s, 3s;
 }
 .social-media a{
     display: inline-flex;
@@ -791,5 +794,26 @@ Keyframe Animations
     100%{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
