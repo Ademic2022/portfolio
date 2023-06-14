@@ -181,7 +181,7 @@ header.height .btnLogin-popup{
     animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
     animation-delay: .2s, 3s;
 }
-.social-media a{
+.social-media a, .contact-social-media a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -198,10 +198,14 @@ header.height .btnLogin-popup{
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
-.social-media a:hover{
+.social-media a:hover, .contact-social-media a:hover{
     background: #06b9f7;
     color: #162938;
     box-shadow: 0 0 20px #06b9f7;
+}
+.contact-social-media a{
+    width: 25px;
+    height: 25px;
 }
 /* 
 ======================================================================================
@@ -247,6 +251,8 @@ LOGIN AND REGISTRATION CASCADING
     overflow: hidden;
     transform: scale(0);
     margin: 0 auto;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
 }
 .container.active{
     height: 520px;
