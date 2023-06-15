@@ -101,7 +101,7 @@ header.height a::after{
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
-.navigation .btnLogin-popup, header.height .btnLogin-popup{
+.navigation .btnLogin-popup, header.height .btnLogin-popup, .home-content .hire-btn{
     width: 130px;
     height: 50px;
     background: transparent;
@@ -116,6 +116,13 @@ header.height a::after{
     transition: .5s;
     text-transform: uppercase;
 }
+.home-content .hire-btn{
+    margin-left: 0; 
+    border-radius: 60px; 
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .2s;  
+}
 header.height .btnLogin-popup{
     color: #162938;
     background: transparent;
@@ -124,7 +131,7 @@ header.height .btnLogin-popup{
     animation: slideRight 1s ease forwards;
     animation-delay: .1s;
 }
-.navigation .btnLogin-popup:hover{
+.navigation .btnLogin-popup:hover, .home-content .hire-btn:hover {
     background: #fff;
     color: #162938;
 }
@@ -206,6 +213,41 @@ header.height .btnLogin-popup{
 .contact-social-media a{
     width: 25px;
     height: 25px;
+    margin: 0 5px;
+}
+section .animate{
+    filter: blur(5px);
+    transition: 1s;
+}
+section.show-animate .animate{
+    filter: blur(0);transform: translateX(0);
+}
+
+.sec-4 .contact-layout-items {
+    transform: translateX(-100%);
+    transition-delay: calc(.2s * var(--i));
+}
+.sec-4.show-animate .contact-layout-items{
+    transform: translateX(0);
+}
+.sec-2.show-animate .image-class{
+    transform: translateX(0);
+    opacity: 1;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: .2s; 
+}
+.sec-3 .showRight-animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f3;
+    transition: 1s;
+    transition-delay: calc(.2s * var(--i));
+}
+.sec-3.show-animate .showRight-animate{
+    width: 0;
 }
 /* 
 ======================================================================================
@@ -493,7 +535,11 @@ ABOUT ME
     margin-bottom: 10%;
     height:80%;
     background-size: cover; 
-    background-position: center; 
+    background-position: center;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: .2s;
+
  }
 .skill-bar h3 span{
     color: #162938;
@@ -588,10 +634,12 @@ SERVICES
     color: #162938;
 }
 .slider h1{
+    position: relative;
     padding-bottom: 15px;
     text-transform: capitalize;
 }
 .slider p{
+    position: relative;
     padding-bottom: 20px;
     text-align: center;
     line-height: 23px;
@@ -679,6 +727,17 @@ CONTACT ME
 .contact-layout-items h3{
     text-transform: uppercase;
 }
+.contact-layout-items i{
+    color: #06b9f7;
+    font-size: 36px;
+}
+.contact-layout-items .contact-social-media a :hover{
+    color: #162938;
+}
+.contact-social-media a i{
+    font-size: 19px;
+}
+
 .input-container{
     width: 80%;
     /* height: 550px; */
