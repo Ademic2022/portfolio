@@ -25,16 +25,6 @@ closeIcon.addEventListener("click", ()=> {
     containerBox.style.display = 'none'
 })
 
-
-
-window.onscroll = function () { 
-    if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
-        header.classList.add("height")
-    } 
-    else {
-        header.classList.remove("height")
-    }
-};
 window.onload = ()=>{
     header.classList.remove("height")
 }
@@ -148,8 +138,36 @@ inputs.forEach((input, index) => {
 
 var typed = new Typed(".multiple-text", {
   strings:["Software Engineer","Frontend Developer", "Backend Developer"],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true
+  typeSpeed: 20,
+  backSpeed: 50,
+  backDelay: 2000,
+  loop: true,
+  smartBackspace: true,
+  shuffle: true,
+  fadeOut: true,
+  fadeOutClass: "typed-fade-out",
+  fadeOutDelay: 500
 })
+
+// ANIMATE ON SCROLL DYNAMIC DISPLAY
+let sections = document.querySelectorAll('section');
+
+window.onscroll = () => {
+  if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+    header.classList.add("height")
+  } 
+  else {
+      header.classList.remove("height")
+  }
+  sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight
+
+    if (top >= offset && top < offset + height){
+      sec.classList.add('show-animate')
+    }else{
+      sec.classList.remove('show-animate')
+    }
+  })
+}
