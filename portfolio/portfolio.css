@@ -711,6 +711,12 @@ SERVICES
     font-weight: 800;
     color: #fff;
 }
+.counters_content i{
+    font-weight: 800;
+    font-size: 45px;
+    color: #fff;   
+    padding-bottom: 15px; 
+}
 /* 
 ======================================================================================
 CONTACT ME
