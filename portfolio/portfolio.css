@@ -646,7 +646,7 @@ SERVICES
     margin-bottom: 100px;
 }
 
-.services-content .slider{
+.services-content .toggle{
     width: 350px;
     height: 20em;
     margin-top: 25px;
@@ -654,24 +654,24 @@ SERVICES
     justify-content: center;
     align-items:center ;
     flex-direction:column;
+    border: 1px solid #b7bbbe;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
-.slider .slider-icon{
+.toggle .toggle-icon{
     font-size: 50px;
     padding-bottom: 15px;
     transition: .8s;
     cursor: default;
-    color: #06b9f7
+    color: #06b9f7;
+    border: none;
 }
-.slider .slides{
-    transform: rotate(360deg);
-    color: #162938;
-}
-.slider h1{
+.toggle h1{
     position: relative;
     padding-bottom: 15px;
     text-transform: capitalize;
 }
-.slider p{
+.toggle p{
     position: relative;
     padding-bottom: 20px;
     text-align: center;

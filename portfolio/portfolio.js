@@ -6,7 +6,7 @@ const closeIcon = document.querySelector(".icon-close")
 const containerBox = document.querySelector(".container-box")
 const elements = document.querySelector(".section-content")
 const header = document.querySelector("#header")
-const slider = document.querySelectorAll(".slider")
+const toggle = document.querySelectorAll(".toggle")
 const home_btn = document.querySelector("#home-btn")
 
 
@@ -33,13 +33,13 @@ window.onload = ()=>{
       header.classList.remove("height")
   }
 }
-slider.forEach((e) => {
+toggle.forEach((e) => {
     e.addEventListener("mouseover", ()=>{
-        e.children[0].classList.add('slides')
+        e.children[0].classList.add('toggle')
         e.children[1].style.color = '#06b9f7'
     })
     e.addEventListener("mouseout", ()=>{
-        e.children[0].classList.remove('slides')
+        e.children[0].classList.remove('toggle')
         e.children[1].style.color = '#162938'
     })
 })
