@@ -63,7 +63,7 @@ header.height:hover::after{
     font-size: 1em;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 20px;
     text-transform: uppercase;
 }
 header.height a{
@@ -112,7 +112,7 @@ header.height a::after{
     border-radius: 6px;
     cursor: pointer;
     color: #fff;
-    margin-left: 40px;
+    margin-left: 20px;
     transition: .5s;
     text-transform: uppercase;
 }
@@ -127,6 +127,7 @@ header.height .btnLogin-popup{
     color: #162938;
     background: transparent;
     border: 2px solid #162938;
+    margin-left: 20px;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: .1s;
@@ -299,6 +300,7 @@ LOGIN AND REGISTRATION CASCADING
     margin: 0 auto;
     opacity: 0;
     animation: zoomIn 1s ease forwards;
+    /* background-color: #06b9f7; */
 }
 .container.active{
     height: 520px;
@@ -625,7 +627,7 @@ SERVICES
     height: 128vh;
     background-color: #f3f4f3;   
 }
-.services-heading h1{
+.services-heading h1, .client-content h1{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -719,6 +721,180 @@ SERVICES
 }
 /* 
 ======================================================================================
+CLIENT
+======================================================================================
+*/
+.client-container{
+    min-height: 100vh;
+    background: url("./img/client.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.client-content{
+    background-color: rgba(0,0,0,0.4);
+    min-height: 100vh;
+}
+.client-content h1{
+    color: #fff;
+    z-index: -1;
+    text-transform: uppercase;
+}
+.client-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 80%;
+    height: 420px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+}
+.client-board .client-contents{
+    width: 900px;
+    height: 360px;
+    border: 1px solid #b7bbbe;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.testimonial p{
+    font-size: 22px;
+    color: #747474;
+    text-align:center;
+    padding: 10px 0;
+}
+.testimonial h2{
+    text-transform: uppercase;
+    color: #06b9f7;
+    padding: 10px 0;
+    text-align: center;
+}
+.testimonial h3{
+    color: #747474;
+    margin: 10px auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.testimonial .client-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f3f4f3;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.testimonial .client-image img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+.sliders{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .slides{
+    width: 500px;
+    height: 500px;
+    display: flex;
+  }
+  .slides input{
+    display: none;
+  }
+  .st{
+    transition: 1s;
+  }
+  .testimonial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 800px;
+    height: 500px;
+    margin-top: -60px;
+    padding: 10px 90px;
+  }
+  .st img{
+    width: 800px;
+    height: 500px;
+  }
+  .nav-m{
+    position: absolute;
+    width: 800px; 
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .m-btn{
+    position: absolute;
+    width: 800px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+  }
+  .m-btn:not(:last-child){
+    margin-right: 300px;
+  }
+  .m-btn:hover{
+    background-color: #06b9f7;
+  }
+  #radio1:checked ~.first{
+    margin-left: 0;
+  }
+  #radio2:checked ~.first{
+    margin-left: -160%;
+  }
+  #radio3:checked ~.first{
+    margin-left: -320%;
+  }
+  #radio4:checked ~.first{
+    margin-left: -480%;
+  }
+  .nav-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 330px;
+    display: flex;
+    justify-content: center;
+  }
+  .nav-auto div{
+    border: 2px solid #06b9f7;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  .nav-auto div:not(:last-child){
+    margin-right: 30px;
+    justify-content: center;
+  }
+  #radio1:checked ~ .nav-auto .a-b1{
+    background-color: #23e3c2;
+  }
+  #radio2:checked ~ .nav-auto .a-b2{
+    background-color: #23e3c2;
+  }
+  #radio3:checked ~ .nav-auto .a-b3{
+    background-color: #23e3c2;
+  }
+  #radio4:checked ~ .nav-auto .a-b4{
+    background-color: #23e3c2;
+  }
+/* 
+======================================================================================
+END OF CLIENT
+======================================================================================
+*/
+/* 
+======================================================================================
 CONTACT ME
 ======================================================================================
 */
@@ -736,7 +912,7 @@ CONTACT ME
 }
 .contact-container .contact-title{
     color: #000;
-    padding: 9em 0 12px;
+    padding: 8em 0 12px;
 }
 .contact-container .contact-title h1{
     font-size: 25px;
