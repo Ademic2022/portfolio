@@ -26,7 +26,12 @@ closeIcon.addEventListener("click", ()=> {
 })
 
 window.onload = ()=>{
-    header.classList.remove("height")
+  if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+    header.classList.add("height")
+  } 
+  else {
+      header.classList.remove("height")
+  }
 }
 slider.forEach((e) => {
     e.addEventListener("mouseover", ()=>{
@@ -108,6 +113,7 @@ function checkValidity() {
 }
 
 // Add event listener to each input
+
 inputs.forEach((input, index) => {
   input.addEventListener('blur', function() {
     if (!checkValidity()) {
@@ -150,6 +156,7 @@ var typed = new Typed(".multiple-text", {
 })
 
 // ANIMATE ON SCROLL DYNAMIC DISPLAY
+
 let sections = document.querySelectorAll('section');
 
 window.onscroll = () => {
@@ -171,3 +178,23 @@ window.onscroll = () => {
     }
   })
 }
+
+
+// SLIDER
+
+var counter = 1;
+var direction = 1; // 1 for forward, -1 for backward
+
+setInterval(() => {
+  document.getElementById('radio' + counter).checked = true;
+  
+  counter += direction;
+  
+  if (counter >= 4) {
+    counter = 4;
+    direction = -1; // Change direction to backward
+  } else if (counter <= 1) {
+    counter = 1;
+    direction = 1; // Change direction to forward
+  }
+}, 4000);
