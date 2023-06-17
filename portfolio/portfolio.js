@@ -198,3 +198,13 @@ setInterval(() => {
     direction = 1; // Change direction to forward
   }
 }, 4000);
+
+// PRELOADER
+
+window.addEventListener('load', function() {
+  var preloader = document.querySelector('.loader_bg');
+
+  setTimeout(function() {
+    preloader.style.display = 'none';
+  }, 2000);
+});
