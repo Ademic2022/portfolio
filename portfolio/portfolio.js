@@ -199,6 +199,14 @@ setInterval(() => {
   }
 }, 4000);
 
+function updateViewportHeight() {
+  var viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+}
+
+window.addEventListener("load", updateViewportHeight);
+window.addEventListener("resize", updateViewportHeight);
+
 // PRELOADER
 
 window.addEventListener('load', function() {
