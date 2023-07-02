@@ -8,6 +8,7 @@ const elements = document.querySelector(".section-content")
 const header = document.querySelector("#header")
 const toggle = document.querySelectorAll(".toggle")
 const home_btn = document.querySelector("#home-btn")
+var start = false;
 
 
 registerLink.addEventListener("click", ()=> {
@@ -25,6 +26,9 @@ closeIcon.addEventListener("click", ()=> {
     containerBox.style.display = 'none'
 })
 
+/*******************************************************************************************/
+// SERVICES DYNAMIC DISPLAY // 
+/*******************************************************************************************/
 window.onload = ()=>{
   if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
     header.classList.add("height")
@@ -43,25 +47,37 @@ toggle.forEach((e) => {
         e.children[1].style.color = '#162938'
     })
 })
-// Active navigation link tracking on scroll
+/*******************************************************************************************/
+// END OF SERVICES DYNAMIC DISPLAY // 
+/*******************************************************************************************/
+
+/*******************************************************************************************/
+// ACTIVE NAVIGATION LINK TRACKING ON SCROLL // 
+/*******************************************************************************************/
 window.addEventListener('scroll', function() {
-    var navButtons = document.querySelectorAll('.nav-btn');
-    var sections = document.querySelectorAll('section');
-  
-    sections.forEach(function(section, index) {
-      var rect = section.getBoundingClientRect();
-      if ((rect.top <= 1 && rect.top <= window.innerHeight) || window.scrollY === 0) {
-        navButtons.forEach(function(btn) {
-          btn.classList.remove('active');
-        });
-        if (navButtons[index]) {
-          navButtons[index].classList.add('active');
-        }
+  var navButtons = document.querySelectorAll('.nav-btn');
+  var sections = document.querySelectorAll('section');
+
+  sections.forEach(function(section, index) {
+    var rect = section.getBoundingClientRect();
+    if ((rect.top <= 1 && rect.top <= window.innerHeight) || window.scrollY === 0) {
+      navButtons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      if (navButtons[index]) {
+        navButtons[index].classList.add('active');
       }
-    });
+    }
   });
-  
-// Smooth scrolling for navigation links
+});
+/*******************************************************************************************/
+// END OF ACTIVE NAVIGATION LINK TRACKING ON SCROLL // 
+/*******************************************************************************************/
+
+/*******************************************************************************************/
+// PAGE SMOOTH SCROLLING // 
+/*******************************************************************************************/
+
 var navLinks = document.querySelectorAll('a.nav-btn');
 
 navLinks.forEach(function(link) {
@@ -75,6 +91,13 @@ navLinks.forEach(function(link) {
     }
   });
 });
+/*******************************************************************************************/
+// END OF PAGE SMOOTH SCROLLING // 
+/*******************************************************************************************/
+
+/*******************************************************************************************/
+// CONTACT ME SECTION AND FORM VALIDATION // 
+/*******************************************************************************************/
 
 // Get the input elements, error message elements, and submit button
 const inputs = document.querySelectorAll('.inputs');
@@ -139,9 +162,13 @@ inputs.forEach((input, index) => {
     }
   });
 });
+/*******************************************************************************************/
+// END OF CONTACT ME SECTION AND FORM VALIDATION // 
+/*******************************************************************************************/
 
-// HOMEPAGE DYNAMIC DISPLAY
-
+/*******************************************************************************************/
+// HOMEPAGE DYNAMIC DISPLAY // 
+/*******************************************************************************************/ 
 var typed = new Typed(".multiple-text", {
   strings:["Software Engineer","Frontend Developer", "Backend Developer"],
   typeSpeed: 20,
@@ -154,34 +181,71 @@ var typed = new Typed(".multiple-text", {
   fadeOutClass: "typed-fade-out",
   fadeOutDelay: 500
 })
+/*******************************************************************************************/
+// END OF HOMEPAGE DYNAMIC DISPLAY // 
+/*******************************************************************************************/ 
 
-// ANIMATE ON SCROLL DYNAMIC DISPLAY
+/*******************************************************************************************/
+// ANIMATE ON SCROLL DYNAMIC DISPLAY// 
+/*******************************************************************************************/ 
 
 let sections = document.querySelectorAll('section');
-
 window.onscroll = () => {
   if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
-    header.classList.add("height")
-  } 
-  else {
-      header.classList.remove("height")
+    header.classList.add("height");
+  } else {
+    header.classList.remove("height");
   }
+
   sections.forEach((sec) => {
     let top = window.scrollY;
     let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight
+    let height = sec.offsetHeight;
 
-    if (top >= offset && top < offset + height){
-      sec.classList.add('show-animate')
-    }else{
-      sec.classList.remove('show-animate')
+    if (top >= offset && top < offset + height) {
+      sec.classList.add('show-animate');
+    } else {
+      sec.classList.remove('show-animate');
     }
-  })
+  });
+};
+/*******************************************************************************************/
+// END OF ANIMATE ON SCROLL DYNAMIC DISPLAY // 
+/*******************************************************************************************/ 
+
+/*******************************************************************************************/
+// COUNTER // 
+/*******************************************************************************************/ 
+
+// Function to increment the counter value
+function count(e) {
+  var max = parseInt(e.dataset.max); // Get the maximum value from the data-max attribute
+  var currentValue = parseInt(e.textContent); // Get the current value from the element's textContent
+
+  var count = setInterval(() => {
+    // Increment the current value
+    currentValue++;
+    e.textContent = currentValue;
+
+    // Check if the current value has reached the maximum value
+    if (currentValue == max) {
+      clearInterval(count); // Stop the counter
+    }
+  }, 8000 / max); // Divide the animation duration (8000ms) by the maximum value to get a smooth increment
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  let stat = document.querySelectorAll('.counter');
+  stat.forEach((e) => count(e));
+});
 
-// SLIDER
+/*******************************************************************************************/
+// END OF COUNTER // 
+/*******************************************************************************************/ 
 
+/*******************************************************************************************/
+// SLIDER // 
+/*******************************************************************************************/ 
 var counter = 1;
 var direction = 1; // 1 for forward, -1 for backward
 
@@ -199,6 +263,10 @@ setInterval(() => {
   }
 }, 4000);
 
+/*******************************************************************************************/
+// END OF SLIDER // 
+/*******************************************************************************************/ 
+
 function updateViewportHeight() {
   var viewport = document.querySelector("meta[name=viewport]");
   viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
@@ -207,8 +275,10 @@ function updateViewportHeight() {
 window.addEventListener("load", updateViewportHeight);
 window.addEventListener("resize", updateViewportHeight);
 
-// PRELOADER
-
+/*******************************************************************************************/
+// PRELOADER // 
+/*******************************************************************************************/ 
+var counter = 1;
 window.addEventListener('load', function() {
   var preloader = document.querySelector('.loader_bg');
 
@@ -216,3 +286,6 @@ window.addEventListener('load', function() {
     preloader.style.display = 'none';
   }, 2000);
 });
+/*******************************************************************************************/
+// END OF PRELOADER // 
+/*******************************************************************************************/ 
