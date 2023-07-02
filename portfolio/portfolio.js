@@ -267,13 +267,13 @@ setInterval(() => {
 // END OF SLIDER // 
 /*******************************************************************************************/ 
 
-function updateViewportHeight() {
-  var viewport = document.querySelector("meta[name=viewport]");
-  viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
-}
+// function updateViewportHeight() {
+//   var viewport = document.querySelector("meta[name=viewport]");
+//   viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+// }
 
-window.addEventListener("load", updateViewportHeight);
-window.addEventListener("resize", updateViewportHeight);
+// window.addEventListener("load", updateViewportHeight);
+// window.addEventListener("resize", updateViewportHeight);
 
 /*******************************************************************************************/
 // PRELOADER // 

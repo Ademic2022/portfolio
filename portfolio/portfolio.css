@@ -509,7 +509,6 @@ ABOUT ME
     align-items: center;
     transition: transform .5s ease, height .2s ease;
     overflow: hidden;
-    /* gap: 1em; */
 }
 .about-container .about-me{
     width: 50%;
@@ -584,15 +583,15 @@ ABOUT ME
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 100vh;
-    margin-top: 73px;
+    min-height: 100vh;
+    margin-top: 50px;
     background-color: #fff;
     overflow: hidden;
  }
  .image-class img{
     width:80%;
-    margin-bottom: 10%;
-    height:85%;
+    margin-bottom: -20%;
+    min-height:805%;
     background-size: cover; 
     background-position: center;
     opacity: 0;
@@ -960,13 +959,9 @@ END OF CLIENT
 CONTACT ME
 ======================================================================================
 */
-#contact{
+.contact-content{
     width: 100%;
-    height: 100vh;
-}
-.contact-container{
-    width: 100%;
-    height: 180vh;
+    min-height: 140vh;
     background-color: #f3f4f3;
     display: flex;
     justify-content: flex-start;
@@ -976,15 +971,15 @@ CONTACT ME
     flex-direction: column;
     gap: 3em;
 }
-.contact-container .contact-title{
+.contact-content .contact-title{
     color: #000;
     padding: 8em 0 12px;
 }
-.contact-container .contact-title h1{
+.contact-content .contact-title h1{
     font-size: 25px;
     text-transform: uppercase;
 }
-.contact-container .contact-layout{
+.contact-content .contact-layout{
     width: 100%;
     height: 150px;
     display: flex;
@@ -1017,11 +1012,11 @@ CONTACT ME
     font-size: 19px;
 }
 
-.input-container{
-    width: 80%;
-    /* height: 550px; */
+.input-container{ 
+    width: 80% ;
     height: auto;
     padding-top: 10px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .input-container .row-align, .input-container .text-area{
