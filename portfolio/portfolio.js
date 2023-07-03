@@ -267,6 +267,26 @@ setInterval(() => {
 // END OF SLIDER // 
 /*******************************************************************************************/ 
 
+/*******************************************************************************************/
+// ICON TOGGLER // 
+/*******************************************************************************************/ 
+function toggleIconClass(event) {
+  var icon = document.getElementById('icon');
+  var navigation = document.querySelector('.navigation');
+  
+  icon.classList.toggle('bx-list-ul');
+  icon.classList.toggle('bx-x');
+  if (icon.classList.contains('bx-x')){
+    navigation.classList.add('show')
+  }
+  else{
+    navigation.classList.remove('show')
+  }
+}
+/*******************************************************************************************/
+// END OF ICON TOGGLER // 
+/*******************************************************************************************/ 
+
 // function updateViewportHeight() {
 //   var viewport = document.querySelector("meta[name=viewport]");
 //   viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);

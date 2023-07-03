@@ -58,6 +58,9 @@ header.height:hover::after{
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
+.mobile-view{
+    display: none;
+}
 .navigation a, header.height a{
     position: relative;
     color: #fff;
@@ -532,7 +535,7 @@ ABOUT ME
     display: inline-block;
     padding: 20px 0;
     text-transform: capitalize;
-    margin: auto;
+    /* margin: auto; */
     font-weight: 700;
     font-size: 36px;
 }
@@ -722,6 +725,7 @@ SERVICES
     position: relative;
     padding-bottom: 15px;
     text-transform: capitalize;
+    color: #162938;
 }
 .toggle p{
     position: relative;
@@ -729,6 +733,7 @@ SERVICES
     text-align: center;
     line-height: 23px;
     font-size: larger;
+    color: #747474;
 }
 .number-area{
     display: flex;
@@ -763,7 +768,7 @@ SERVICES
 .counters_content p{
     font-size: 20px;
     font-weight: 800;
-    color: #fff;
+    color: #747474;
 }
 .counters_content i{
     font-weight: 800;
@@ -827,6 +832,7 @@ CLIENT
     color: #747474;
     text-align:center;
     padding: 10px 0;
+    /* background-color: #ae0e0e; */
 }
 .testimonial h2{
     text-transform: uppercase;
@@ -861,6 +867,7 @@ CLIENT
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
+    /* background-color: #ae0e0e; */
   }
   .slides{
     width: 500px;
@@ -1038,6 +1045,10 @@ CONTACT ME
     border-right: 0;
     border-color:darkgray;
     background-color: #f3f4f3;
+    font-size: 18px;
+}
+.col-align input[type="text"]{
+    text-transform: capitalize;
 }
 .input-container .text-area{
     flex-direction: column;
@@ -1052,6 +1063,7 @@ CONTACT ME
     background-color: #f3f4f3;
     border-color:darkgray;
     border-width: 2px;
+    font-size: 18px;
 }
 .col-align p, .text-area p{
     color: #ae0e0e;
@@ -1185,5 +1197,165 @@ Keyframe Animations
 @keyframes mysql {
     100%{
         width: 70%;
+    }
+}
+/* 
+======================================================================================
+MEDIA QUERIES FOR MOBILES
+======================================================================================
+*/
+@media only screen and (max-width: 767px) {
+    header{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 15px 12px;
+    }
+    .navigation a, header.height a{
+        /* display: none; */
+        width: auto;
+        font-size: 10px;
+        margin-left: 2px;
+    }
+    .navigation a::after, header.height a::after{
+        bottom: -3px;
+        height: 2px;
+    }
+    header.height .mobile-view{
+        color: #000;
+    }
+    .navigation.show a, header.height.show a{
+        display: flex;
+        padding: 5px;
+        font-size: 12px;
+    }
+    .btnLogin-popup{
+        display: none;
+    }
+    .home{
+        flex-direction: column-reverse;
+    }
+    .home-img img{
+        display: inline;
+        width: 200px;
+        height: 200px;
+    }
+    .logo{
+        padding-left: 5px;
+        font-size: 15px;
+        font-weight: 700;
+        text-align: left;
+    }
+    .home-content h3{
+        font-size: 23px;
+    }
+    .home-content p{
+        font-size: 16px;
+    }
+    .home-content h1{
+        font-size: 45px;
+    }
+    /* 
+    MEDIA QUERIES FOR MOBILES ---ABOUT---
+    ======================================================================================
+    */
+    .about-container{
+        flex-direction: column;
+    }
+    .image-class{
+        display: none;
+    }
+    .about-me.animate, .skills.animate{
+        width: 400px;
+    }
+    .about-me .text-content,  .text-content p{
+        text-align: center;
+    }
+    .text-content .download-btn{
+        margin: 0;
+    }
+    .text-content h1{
+        padding-top: 60px;
+    }
+    /* 
+    MEDIA QUERIES FOR MOBILES ---CLIENT---
+    ======================================================================================
+    */
+    .client-content h1{
+        padding-top: 0;
+    }
+    .client-board{
+        overflow: hidden;
+        margin-top: -40px;
+        width: 360px;
+    }
+    .client-board .client-contents{
+        width: 322px;
+        overflow: hidden;
+    }
+    .testimonial p{
+        width: 280px;
+        height: 150px;
+        font-size: 18px;
+        overflow-y: scroll;
+    }
+    .testimonial h3{
+        margin: 5px auto;
+        text-align: center;
+        padding-bottom: 50px;
+        font-size: 16px;
+    }.testimonial h2{
+        margin: 5px auto;
+        font-size: 18px;
+        padding-bottom: 0;
+    }
+    .nav-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+    /* 
+    MEDIA QUERIES FOR MOBILES ---SERVICES---
+    ======================================================================================
+    */
+    .services-content{
+        flex-direction: column;
+        margin: 0;
+    }
+    .service1.toggle, .service2.toggle, .service3.toggle{
+        margin-top: 0;
+    }
+    .service3.toggle{
+        margin-bottom: 20px;
+    }
+    .services-heading h1{
+        padding-top: 10px;
+    }
+    .counters_content h1{
+        font-size: 30px;
+    }
+    .counters_content p{
+        font-size: 18px;
+    }
+    /* 
+    MEDIA QUERIES FOR MOBILES ---CONTACTS---
+    ======================================================================================
+    */
+    .contact-content .contact-layout{
+        flex-direction: column;
+        height: 900px;
+    }
+    .contact-layout .contact-layout-items{
+        padding: 30px 0;
+    }
+    .contact-content .contact-title{
+        padding-top: 80px;
+    }
+    .text-area .btn{
+        width: 50%;
+    }
+    .input-container .row-align{
+        flex-direction: column;
+    }
+    .col-align input[type="text"], .col-align input[type="email"]{
+        padding: 0 12px;
     }
 }
