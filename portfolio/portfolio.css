@@ -69,6 +69,7 @@ header.height:hover::after{
     font-weight: 500;
     margin-left: 20px;
     text-transform: uppercase;
+
 }
 header.height a{
     color: #162938;
@@ -1102,102 +1103,6 @@ FOOTER
     align-items: center;
     color: #fff;
 }
-
-/* 
-======================================================================================
-Keyframe Animations
-======================================================================================
-*/
-
-@keyframes slideRight {
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-@keyframes slideLeft {
-    0%{
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-@keyframes slideTop {
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes slideBottom {
-    0%{
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes zoomIn {
-    0%{
-        transform: scale(0);
-        opacity: 0;
-    }
-    100%{
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-@keyframes floatImage {
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-24px);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-
-/* SKILLBAR ANIMATION */
-
-@keyframes html {
-    100%{
-        width: 86%;
-    }
-}
-@keyframes css {
-    100%{
-        width: 75%;
-    }
-}
-@keyframes javascript {
-    100%{
-        width: 82%;
-    }
-}
-@keyframes python {
-    100%{
-        width: 88%;
-    }
-}
-@keyframes mysql {
-    100%{
-        width: 70%;
-    }
-}
 /* 
 ======================================================================================
 MEDIA QUERIES FOR MOBILES
@@ -1210,22 +1115,46 @@ MEDIA QUERIES FOR MOBILES
         text-align: center;
         padding: 15px 12px;
     }
+    .navigation{
+        position: absolute;
+        top: 72px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        /* transform: translateX(-50%); */
+        /* animation: zoomIn 1.5s ease-out; */
+        animation: zoomIn 1s ease forwards;
+    }
+    .navigation.show{
+        background: rgba(181, 181, 181);
+    }
     .navigation a, header.height a{
-        /* display: none; */
+        display: none;
         width: auto;
         font-size: 10px;
         margin-left: 2px;
+        text-align: left;
     }
     .navigation a::after, header.height a::after{
-        bottom: -3px;
+        bottom: 2px;
         height: 2px;
+    }
+    .mobile-view{
+        display: block;
+        font-size: 35px;
+        color: #fff;
     }
     header.height .mobile-view{
         color: #000;
+        font-size: 35px;
     }
     .navigation.show a, header.height.show a{
         display: flex;
-        padding: 5px;
+        padding: 8px;
         font-size: 12px;
     }
     .btnLogin-popup{
@@ -1241,7 +1170,7 @@ MEDIA QUERIES FOR MOBILES
     }
     .logo{
         padding-left: 5px;
-        font-size: 15px;
+        font-size: 25px;
         font-weight: 700;
         text-align: left;
     }
@@ -1358,3 +1287,111 @@ MEDIA QUERIES FOR MOBILES
         padding: 0 12px;
     }
 }
+/* 
+======================================================================================
+Keyframe Animations
+======================================================================================
+*/
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* SKILLBAR ANIMATION */
+
+@keyframes html {
+    100%{
+        width: 86%;
+    }
+}
+@keyframes css {
+    100%{
+        width: 75%;
+    }
+}
+@keyframes javascript {
+    100%{
+        width: 82%;
+    }
+}
+@keyframes python {
+    100%{
+        width: 88%;
+    }
+}
+@keyframes mysql {
+    100%{
+        width: 70%;
+    }
+}
+@keyframes scrollDownAnimation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(-10px);
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(10px);
+    }
+  }
