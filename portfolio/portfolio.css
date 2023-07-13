@@ -1125,7 +1125,7 @@ SCROLL TO TOP BUTTON
     z-index: 1000;
   }
   #scrollToTopbtn::after {
-    content: "\f077";
+    content: "\2191";
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
