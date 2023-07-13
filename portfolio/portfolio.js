@@ -200,7 +200,10 @@ window.onscroll = () => {
     header.classList.remove("height");
     scrollToTopBtn.classList.remove("show")
   }
-
+scrollToTopBtn.addEventListener("click", (e)=>{
+  e.preventDefault()
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+})
   sections.forEach((sec) => {
     let top = window.scrollY;
     let offset = sec.offsetTop - 150;
