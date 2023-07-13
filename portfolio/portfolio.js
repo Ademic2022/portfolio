@@ -190,11 +190,15 @@ var typed = new Typed(".multiple-text", {
 /*******************************************************************************************/ 
 
 let sections = document.querySelectorAll('section');
+let scrollToTopBtn = document.querySelector("#scrollToTopbtn")
 window.onscroll = () => {
   if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
     header.classList.add("height");
+    scrollToTopBtn.classList.add("show")
+
   } else {
     header.classList.remove("height");
+    scrollToTopBtn.classList.remove("show")
   }
 
   sections.forEach((sec) => {
