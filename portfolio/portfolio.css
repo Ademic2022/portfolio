@@ -1300,6 +1300,10 @@ MEDIA QUERIES FOR MOBILES
     .nav-auto div:not(:last-child){
         margin-right: 10px;
     }
+    .nav-auto{
+        width: 100px;
+        margin-left: 350px;
+    }
     /* 
     MEDIA QUERIES FOR MOBILES ---SERVICES---
     ======================================================================================
