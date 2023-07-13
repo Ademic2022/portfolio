@@ -1105,6 +1105,58 @@ FOOTER
 }
 /* 
 ======================================================================================
+SCROLL TO TOP BUTTON
+======================================================================================
+*/
+#scrollToTopbtn {
+    display: inline-block;
+    background-color: #FF9800;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #scrollToTopbtn::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #scrollToTopbtn:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #scrollToTopbtn:active {
+    background-color: #555;
+  }
+  #scrollToTopbtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @media (min-width: 500px) {
+    #scrollToTopbtn {
+      margin: 30px;
+    }
+  }
+/* 
+======================================================================================
+END OF SCROLL TO TOP BUTTON
+======================================================================================
+*/
+/* 
+======================================================================================
 MEDIA QUERIES FOR MOBILES
 ======================================================================================
 */
