@@ -1082,8 +1082,7 @@ button.submit-button.btn{
     background-color: darkgrey;
     cursor: not-allowed;
 }
-.text-area .enabled{
-    width: 25%;
+button.submit-button.btn.enabled{
     background-color: #06b9f7;
     cursor: pointer;
 }
