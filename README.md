@@ -12,7 +12,7 @@ This is a simple portfolio website template designed to showcase your skills, pr
 
 ## Demo
 
-You can see a live demo of the portfolio website <a href="https://ademic.rf.gd" target="_blank">Ademic</a>
+You can see a live demo of the portfolio website <a target="_blank" href="https://ademic.rf.gd">Ademic</a>
 
 ## Getting Started
 
