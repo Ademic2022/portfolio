@@ -12,7 +12,7 @@ This is a simple portfolio website template designed to showcase your skills, pr
 
 ## Demo
 
-You can see a live demo of the portfolio website [here](https://ademic2022.github.io/portfolio/portfolio.html).
+You can see a live demo of the portfolio website [here](https://ademic.rf.gd).
 
 ## Getting Started
 
