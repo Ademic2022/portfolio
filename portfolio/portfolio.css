@@ -641,10 +641,6 @@ ABOUT ME
     align-items: center;
     border: 2px solid #06b9f7;
 }
-/* .sec-2.show-animate .animate{
-    animation: html 2s linear forwards;
-    animation-delay: calc(.2s * var(--i));
-} */
 .html{
     animation: html 2s linear forwards;
     animation-delay: calc(.2s * var(--i));
