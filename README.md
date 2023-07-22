@@ -79,3 +79,13 @@ If you have any suggestions, improvements, or bug fixes, feel free to open an is
 Thank you for using this portfolio website template. I hope it helps you showcase your work and skills effectively. If you find it useful, please consider giving it a star on GitHub.
 
 Happy coding! 🚀
+
+## Author
+<details>
+    <summary>Adeeyo Michael</summary>
+    <ul>
+    <li><a href="https://www.github.com/ademic2022" target='_blank'>Github</a></li>
+    <li><a href="https://www.twitter.com/Ademic_code" target='_blank'>Twitter</a></li>
+    <li><a href="mailto:adeeyomichael77@gmail.com" target='_blank'>e-mail</a></li>
+    </ul>
+</details>
