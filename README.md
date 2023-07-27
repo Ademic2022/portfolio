@@ -53,7 +53,7 @@ git push origin main
 
 5. Click Save.
 
-6. Your portfolio website will be deployed and accessible at `https://your-username.github.io/portfolio/`.
+6. Your portfolio website will be deployed and accessible at `https://ademic2022.github.io/portfolio/`.
 
 ## Customization
 
