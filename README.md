@@ -66,9 +66,6 @@ The design of this portfolio website template is inspired by various open-source
 - [Box Icons](https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css) for icons
 - [Unsplash](https://unsplash.com/) for images
 
-## License
-
-This portfolio website template is open-source and available under the [MIT License](LICENSE).
 
 ## Contribute
 
