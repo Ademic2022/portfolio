@@ -11,7 +11,7 @@ This is a simple portfolio website template designed to showcase your skills, pr
 - Contact form for users to get in touch with you
 
 ## previews
-![preview 1]((https://github.com/Ademic2022/portfolio/blob/main/previews/portfolio%20preview.png)
+![preview 1](https://github.com/Ademic2022/portfolio/blob/main/previews/portfolio%20preview.png)
 ![preview 2](https://github.com/Ademic2022/portfolio/blob/main/previews/about_preview.png)
 
 ## Demo
