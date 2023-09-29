@@ -10,6 +10,10 @@ This is a simple portfolio website template designed to showcase your skills, pr
 - Project cards with images, descriptions, and links
 - Contact form for users to get in touch with you
 
+## previews
+![preview 1]((https://github.com/Ademic2022/portfolio/blob/main/previews/portfolio%20preview.png)
+![preview 2](https://github.com/Ademic2022/portfolio/blob/main/previews/about_preview.png)
+
 ## Demo
 
 You can see a live demo of the portfolio website <a target="_blank" href="https://ademic.rf.gd">Ademic</a>
