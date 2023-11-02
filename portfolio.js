@@ -58,18 +58,29 @@ window.addEventListener('scroll', function() {
   var navButtons = document.querySelectorAll('.nav-btn');
   var sections = document.querySelectorAll('section');
 
-  sections.forEach(function(section, index) {
-    var rect = section.getBoundingClientRect();
-    if ((rect.top <= 1 && rect.top <= window.innerHeight) || window.scrollY === 0) {
-      navButtons.forEach(function(btn) {
-        btn.classList.remove('active');
-      });
-      if (navButtons[index]) {
-        navButtons[index].classList.add('active');
+  var currentSection = -1;
+  // Find the section currently in view
+  for (var i = sections.length - 1; i >= 0; i--) {
+      var rect = sections[i].getBoundingClientRect();
+      if (rect.top <= 1 && rect.bottom >= 0) {
+          currentSection = i;
+          break;
       }
-    }
+  }
+  // Remove the 'active' class from all navigation links
+  navButtons.forEach(function(btn) {
+      btn.classList.remove('active');
   });
+
+  // Add the 'active' class to the corresponding navigation link
+  if (currentSection >= 0) {
+    navButtons[currentSection].classList.add('active');
+  }else if (top === 0) {
+      // If scrolling to the top, remove 'active' from the "Home" link
+      document.querySelector('.nav-btn.home').classList.remove('active');
+  }
 });
+
 /*******************************************************************************************/
 // END OF ACTIVE NAVIGATION LINK TRACKING ON SCROLL // 
 /*******************************************************************************************/
@@ -79,15 +90,20 @@ window.addEventListener('scroll', function() {
 /*******************************************************************************************/
 
 var navLinks = document.querySelectorAll('a.nav-btn');
+var navbarHeight = 90;
 
-navLinks.forEach(function(link) {
-  link.addEventListener('click', function(e) {
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
     e.preventDefault();
-    var target = document.querySelector(this.getAttribute('href'));
-    if (target.getAttribute('id') === 'home') {
+    var target = document.querySelector(link.getAttribute('href'));
+    
+    if (target.getAttribute('id' === 'home')) {
+      // Scroll to the top of the page, leaving space for the navbar
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      target.scrollIntoView({ behavior: 'smooth' });
+      // Scroll to the target, accounting for the navbar height
+      var scrollPosition = target.offsetTop - navbarHeight;
+      window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
     }
   });
 });
