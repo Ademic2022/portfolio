@@ -1436,6 +1436,41 @@ MEDIA QUERIES FOR MOBILES
     .col-align input[type="text"], .col-align input[type="email"]{
         padding: 0 12px;
     }
+
+    .projects {
+        padding: 1rem 2rem; /* Adjust the padding for smaller screens */
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr); /* Stack the projects for smaller screens */
+        gap: 1rem; /* Reduce the gap for smaller screens */
+    }
+
+    .projects-container .projects-box {
+        border-radius: 1rem; /* Adjust the border radius for smaller screens */
+        box-shadow: 0 0 .5rem #162938; /* Adjust the box shadow for smaller screens */
+        height: 10rem; /* Adjust the height for smaller screens */
+    }
+
+    .projects-layer h4 {
+        font-size: 1.5rem; /* Adjust the font size for smaller screens */
+        margin-top: 15px; /* Adjust the margin for smaller screens */
+    }
+
+    .projects-layer p {
+        font-size: 1rem; /* Adjust the font size for smaller screens */
+        margin: .3rem 0 .5rem; /* Adjust the margin for smaller screens */
+    }
+
+    .projects-layer a {
+        width: 3rem; /* Adjust the width for smaller screens */
+        height: 3rem; /* Adjust the height for smaller screens */
+        margin-bottom: .3rem; /* Adjust the margin for smaller screens */
+    }
+
+    .projects-layer a i {
+        font-size: 1.5rem; /* Adjust the font size for smaller screens */
+    }
 }
 /* 
 ======================================================================================
