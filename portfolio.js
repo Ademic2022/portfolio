@@ -58,27 +58,20 @@ window.addEventListener('scroll', function() {
   var navButtons = document.querySelectorAll('.nav-btn');
   var sections = document.querySelectorAll('section');
 
-  var currentSection = -1;
-  // Find the section currently in view
-  for (var i = sections.length - 1; i >= 0; i--) {
-      var rect = sections[i].getBoundingClientRect();
-      if (rect.top <= 1 && rect.bottom >= 0) {
-          currentSection = i;
-          break;
-      }
-  }
-  // Remove the 'active' class from all navigation links
-  navButtons.forEach(function(btn) {
-      btn.classList.remove('active');
-  });
+  sections.forEach((event, index) => {
+    let top = window.scrollY;
+    let offset = event.offsetTop - 150;
+    let height = event.offsetHeight;
 
-  // Add the 'active' class to the corresponding navigation link
-  if (currentSection >= 0) {
-    navButtons[currentSection].classList.add('active');
-  }else if (top === 0) {
-      // If scrolling to the top, remove 'active' from the "Home" link
-      document.querySelector('.nav-btn.home').classList.remove('active');
-  }
+    if (top >= offset && top < offset + height) {
+      navButtons[index].classList.add('active');
+    } else {
+      navButtons[index].classList.remove('active');
+    }
+    if (top === 0) {
+      navButtons[index].classList.remove('active');
+    }
+  });
 });
 
 /*******************************************************************************************/
@@ -186,7 +179,7 @@ inputs.forEach((input, index) => {
 // HOMEPAGE DYNAMIC DISPLAY // 
 /*******************************************************************************************/ 
 var typed = new Typed(".multiple-text", {
-  strings:["Software Engineer","Frontend Developer", "Backend Developer"],
+  strings:["Software Engineer", "Backend Developer"],
   typeSpeed: 20,
   backSpeed: 50,
   backDelay: 2000,
@@ -309,15 +302,6 @@ function toggleIconClass(event) {
 /*******************************************************************************************/
 // END OF ICON TOGGLER // 
 /*******************************************************************************************/ 
-
-// function updateViewportHeight() {
-//   var viewport = document.querySelector("meta[name=viewport]");
-//   viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
-// }
-
-// window.addEventListener("load", updateViewportHeight);
-// window.addEventListener("resize", updateViewportHeight);
-
 /*******************************************************************************************/
 // PRELOADER // 
 /*******************************************************************************************/ 
