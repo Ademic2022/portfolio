@@ -811,7 +811,7 @@ CLIENT
     background: rgba(255, 255, 255, 0.9);
 }
 .client-board .client-contents{
-    width: 900px;
+    width: 62.5em;
     height: 360px;
     border: 1px solid #b7bbbe;
     margin: 0 auto;
@@ -819,6 +819,8 @@ CLIENT
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .testimonial p{
     font-size: 22px;
@@ -1353,16 +1355,21 @@ MEDIA QUERIES FOR MOBILES
     ======================================================================================
     */
     .client-content h1{
-        padding-top: 0;
+        padding-top: 3rem;
     }
     .client-board{
         overflow: hidden;
-        margin-top: -40px;
+        margin-top: 10em;
         width: 360px;
+        height: 33rem;
     }
     .client-board .client-contents{
         width: 322px;
+        height: 30rem;
         overflow: hidden;
+    }
+    .sliders{
+        padding-top: 4.5rem;
     }
     .testimonial p{
         width: 280px;
@@ -1469,7 +1476,7 @@ MEDIA QUERIES FOR MOBILES
     }
 
     .projects-layer a i {
-        font-size: 1.5rem; /* Adjust the font size for smaller screens */
+        font-size: 1.5rem;
     }
 }
 /* 
